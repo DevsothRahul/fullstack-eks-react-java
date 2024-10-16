@@ -1,0 +1,48 @@
+html, body {
+  height: 100%; /* Full height for the body */
+  margin: 0; /* Remove default margin */
+}
+
+.app-container {
+  display: flex; /* Use Flexbox */
+  flex-direction: column; /* Align items in a column */
+  min-height: 100vh; /* Full height of the viewport */
+  background-image: url('./components/images/back-ground.jpg'); /* Your background image */
+  background-size: cover; /* Make the image cover the entire element */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent image repetition */
+}
+
+.container {
+  flex: 1; /* Allow the container to grow and take available space */
+}
+
+.footer {
+  background-color: #343a40; /* Dark background color */
+  color: white; /* White text color */
+  text-align: center; /* Centered text */
+  padding: 20px 0; /* Padding for top and bottom */
+  width: 100%; /* Full width */
+}
+
+
+
+
+
+.home-links {
+  margin-top: 20px; /* Space above links */
+}
+
+.btn {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white; /* Button text color */
+  padding: 10px 20px; /* Button padding */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Rounded corners */
+  margin: 5px; /* Space between buttons */
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

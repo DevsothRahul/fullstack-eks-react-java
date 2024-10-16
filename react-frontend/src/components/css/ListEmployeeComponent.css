@@ -1,0 +1,15 @@
+.table th, .table td {
+    color: white; /* Font color for table headers and cells */
+}
+
+.text-center {
+    color: white; /* Color for the heading */
+}
+
+.table {
+    background-color: #343a40; /* Dark background for the table */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #495057; /* Darker stripe for odd rows */
+}

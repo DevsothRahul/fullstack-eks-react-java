@@ -1,0 +1,12 @@
+.navbar {
+    margin-bottom: 20px; /* Space below the navbar */
+}
+
+.nav-link {
+    margin-right: 15px; /* Space between links */
+    font-size: 18px; /* Font size for links */
+}
+
+.nav-link:hover {
+    color: #ffcc00; /* Highlight color on hover */
+}
