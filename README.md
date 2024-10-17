@@ -35,3 +35,5 @@ kubectl apply -f my-spring-boot-app.k8s.deployment.yaml
 
 kubectl port-forward svc/spring-boot-service 8080:8080
 
+
+http://localhost:8080
