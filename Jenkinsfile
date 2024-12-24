@@ -13,9 +13,12 @@ pipeline {
                 }
             }
         }
-        stage('Test') {
+        stage('Docker-Build') {
             steps {
-                echo 'Testing..'
+                echo 'Docker Building.......'
+		sh '''
+                  docker build -t my-springboot-app:latest ./springboot-backend
+                  '''
             }
         }
         stage('Deploy') {
