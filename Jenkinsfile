@@ -39,6 +39,7 @@ pipeline {
                 echo 'Deploying....'
 		// Deploy the app to Minikube
                     sh '''
+		    minikube start
                     kubectl apply -f springboot-backend/my-spring-boot-app.k8s.deployment.yaml --validate=false
                     '''
                     // Check if the deployment was successful
