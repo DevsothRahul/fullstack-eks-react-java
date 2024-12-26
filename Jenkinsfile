@@ -37,6 +37,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+		sh 'kubectl apply -f my-spring-boot-app.k8s.deployment.yaml'
             }
         }
     }
