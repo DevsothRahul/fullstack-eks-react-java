@@ -37,10 +37,12 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-		//sh 'kubectl apply -f springboot-backend/my-spring-boot-app.k8s.deployment.yaml'
-		sh '''#!/bin/bash
-                    kubectl apply -f springboot-backend/my-spring-boot-app.k8s.deployment.yaml --validate=false
+		// Deploy the app to Minikube
+                    sh '''
+                    kubectl apply -f springboot-backend/my-spring-boot-app.k8s.deployment.yaml
                     '''
+                    // Check if the deployment was successful
+                   sh 'kubectl get pods'
             }
         }
     }
