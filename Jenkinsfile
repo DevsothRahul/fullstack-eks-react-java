@@ -30,7 +30,7 @@ pipeline {
                 sh '''
                   docker build -t rahul1138/full-stack-springboot-eks:latest ./springboot-backend
                   '''
-                sh "docker push rahul1138/full-stack-springboot-eks:latest"
+                //sh "docker push rahul1138/full-stack-springboot-eks:latest"
                 echo 'Docker image pushed into Hub'
             }
         }
@@ -39,7 +39,7 @@ pipeline {
                 echo 'Deploying....'
 		// Deploy the app to Minikube
                     sh '''
-                    kubectl apply -f springboot-backend/my-spring-boot-app.k8s.deployment.yaml
+                    kubectl apply -f springboot-backend/my-spring-boot-app.k8s.deployment.yaml --validate=false
                     '''
                     // Check if the deployment was successful
                    sh 'kubectl get pods'
