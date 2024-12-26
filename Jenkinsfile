@@ -13,24 +13,25 @@ pipeline {
                 }
             }
         }
-	stage('Login to Docker Hub') {
+        stage('Login to Docker Hub') {
             steps {
                 script {
                     // Docker login using credentials
-		    withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'DOCKER_CREDS_USR', passwordVariable: 'DOCKER_CREDS_PSWD')])
-                    sh "echo $DOCKER_CREDS_PSWD | docker login -u $DOCKER_CREDS_USR --password-stdin"
+                    withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'DOCKER_CREDS_USR', passwordVariable: 'DOCKER_CREDS_PSWD')]) {
+                        // The actual command to login using Docker credentials
+                        sh "echo $DOCKER_CREDS_PSWD | docker login -u $DOCKER_CREDS_USR --password-stdin"
+                    }
                 }
             }
         }
         stage('Docker-Build') {
             steps {
                 echo 'Docker Building.......'
-		sh '''
+                sh '''
                   docker build -t rahul1138/full-stack-springboot-eks:latest ./springboot-backend
                   '''
-		sh "docker push rahul1138/full-stack-springboot-eks:latest"
-		
-		echo 'Docker image pushed into Hub'
+                sh "docker push rahul1138/full-stack-springboot-eks:latest"
+                echo 'Docker image pushed into Hub'
             }
         }
         stage('Deploy') {
@@ -40,3 +41,4 @@ pipeline {
         }
     }
 }
+
