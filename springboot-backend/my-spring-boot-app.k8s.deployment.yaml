@@ -42,7 +42,6 @@ spec:
               key: MYSQL_ROOT_PASSWORD
         ports:
         - containerPort: 3306
-        
 ---
 apiVersion: v1
 kind: Service
@@ -52,10 +51,8 @@ spec:
   type: ClusterIP
   ports:
   - port: 3306
-    targetPort: 3306
   selector:
     app: mysql
-
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -109,3 +106,4 @@ spec:
     targetPort: 8080
   selector:
     app: spring-boot-app
+
