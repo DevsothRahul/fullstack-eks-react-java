@@ -70,7 +70,7 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-        image: rahul1138/my-spring-boot-app:latest # Replace with your actual image
+        image: rahul1138/full-stack-springboot-eks # Replace with your actual image
         ports:
         - containerPort: 8080
         env:
