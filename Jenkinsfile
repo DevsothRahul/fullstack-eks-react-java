@@ -20,6 +20,7 @@ pipeline {
             steps {
                 script {
                     // Docker login using credentials
+		    withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'DOCKER_CREDS_USR', passwordVariable: 'DOCKER_CREDS_PSWD')])
                     sh "echo $DOCKER_CREDS_PSWD | docker login -u $DOCKER_CREDS_USR --password-stdin"
                 }
             }
@@ -42,4 +43,3 @@ pipeline {
         }
     }
 }
-
