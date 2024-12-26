@@ -1,8 +1,5 @@
 pipeline {
     agent any
-	environment {
-        	DOCKER_CREDS = credentials('docker-hub-credentials') // Reference your credentials ID here
-   	   }
     stages {
         stage('Checkout') {
             steps {
