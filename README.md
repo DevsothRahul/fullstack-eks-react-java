@@ -1,11 +1,44 @@
+This project contains a ReactJS frontend and a Spring Boot backend, both containerized and deployed on Minikube Kubernetes cluster. It can be easily adapted for EKS as well.
 
-minikube status
+📦 Prerequisites
+    Minikube
+    Docker
+    Node.js & npm
+    Maven
+    Jenkins (installed as Docker container or server)
+    kubectl
+    Docker Hub account (or private registry)
 
-minikube start
 
 
-Reactjs-front-end
-#############
+🟢 Minikube Setup
+ 
+ minikube status           # Check current Minikube status
+ minikube start            # Start the Minikube cluster
+ 
+
+🔁 Jenkins CI/CD Integration
+📌 Jenkins Job Tasks
+    Clone the Git Repository
+    Build React & Spring Boot Apps
+    Build Docker Images
+    Push to Docker Hub
+    Deploy to Kubernetes via kubectl
+
+
+✅ Access the App
+Component	      URL
+React Frontend	http://localhost:3000
+Spring Boot API	http://localhost:8080
+
+
+
+
+
+Manual Running:
+================
+
+Reactjs-front-end:
 
 npm run build
 
@@ -23,7 +56,7 @@ http://localhost:3000
 
 
 SpringBoot-Backend
-##################
+
 
 mvn clean install
 
